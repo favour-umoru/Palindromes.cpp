@@ -8,3 +8,12 @@
 
 using namespace std;
 
+void printUsageInfo(string nameExecutable)
+{
+  
+}
+
+bool isPalindrome(string nameExecutable)
+{
+  
+}
