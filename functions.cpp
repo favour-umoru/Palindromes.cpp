@@ -5,6 +5,7 @@
 #include <vector>
 #include<cmath>
 #include<cstdlib>
+#include "functions.h"
 
 using namespace std;
 
@@ -15,6 +16,7 @@ void printUsageInfo(string nameExecutable)
 
 bool isPalindrome(string nameExecutable)
 {
+  bool isPalindrome;
   
   return bool;
 }
@@ -22,6 +24,8 @@ bool isPalindrome(string nameExecutable)
 
 bool isPalindromeR(string nameExecutable)
 {
+  bool isPalindromeR;
+  
   
   return bool;
 }
