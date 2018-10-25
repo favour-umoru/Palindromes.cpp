@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string>
-#include <vector>
 #include<cmath>
 #include<cstdlib>
 #include "functions.h"
@@ -30,49 +29,46 @@ bool isPalindromeR(string Executable)
   return isPalindromeR;
 }
   
-bool isPalindrome(string Executable, bool caseSensitive, bool spaceIgnore)
+bool isPalindrome(string Executable, bool caseSensitive, bool removeSpaces)
 {
+  // Calls the flag functions to create the string that will be evaluated as a palindrome
+  processString(Executable,caseSensitive,removeSpaces);
   
+  // Call this function to determmine if the string is sa palindrome
+  isPalindromeR(Executable);
   
   return bool;
 }
 
-
-
-
-string toLower(string Executable)
+string processString(string Executable, bool caseSensitive, bool removeSpaces)
 {
   string returnString;
   char lowerConvert;
-  int i = 0;
-  
-  for (int i = 0; i < Executable.length() - 1; ++i) {
-    lowerConvert=argv[i];
-    // ????????????? Is this the right assignment for a function????
-    returnString = putchar (tolower(lowerConvert));
-  } 
-  return returnString;
-}
-
-string removePunctuation(string Executable, bool removeSpaces)
-{
-  string returnString;
-  
+ 
   //Use the isalnum function defied in 
   for (int i = 0; i < Executable.length() - 1; ++i) {
-    if(isalnum(Executable[i]){
-      returnString += Executable[i];
+    if(caseSensitive == true)
+    {
+      lowerConvert=argv[i];
+      // ????????????? Is this the right assignment for a function????
+      returnString = putchar (tolower(lowerConvert));
     }
     // If the user wants their string evaluated with the space removed or not   
     if(removeSpaces == true){
       int j = 1;
-       if(Executable[i] != ' '){
-         Executable[j] = Executable[i];
-           j++;
-       }
+      //Use the isalnum function defied in 
+      if(isalnum(Executable[i]){
+        returnString += Executable[i];
+      }
+      if(returnString[i] != ' '){
+        returnString[j] = returnString[i];
+        returnString = returnString[j];
+        j++;
+      }
     }
-    else{
-      
+    elseif(removeSpaces != true){
+        if(isalnum(Executable[i])
+          returnString += Executable[i];
     }
   }
   // Check to see if the string is converted properly
