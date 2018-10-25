@@ -1,6 +1,6 @@
 #include <iostream>
-#include <fstream>
-#include <sstream>
+#include <stdio.h>
+#include <ctype.h>
 #include <string>
 #include <vector>
 #include<cmath>
@@ -9,41 +9,61 @@
 
 using namespace std;
 
-void printUsageInfo(string nameExecutable)
+void printUsageInfo(int argc, char* argv[])
 {
-  
+  // Displayed if no input strings were found at the command line.
+  if(argc == 1)
+    cout << " << argv[0] << " << << " ";
 }
 
-bool isPalindrome(string nameExecutable)
-{
-  bool isPalindrome;
-  
-  return bool;
-}
-
-
-bool isPalindromeR(string nameExecutable)
+bool isPalindromeR(int argc, char* argv[])
 {
   bool isPalindromeR;
+  // Determine using for loops if the string is a palindrome and it is case
+  // sensitive and include spaces as characters
+  for(int i = 1; i < argc; i++){
+    // If the first and the last characters are the same then the string is a palindrome
+    if(argv[i] != argv[argc-i]){
+      isPalindromeR = false;
+    }
+    else {
+      isPalindromeR = true;
+    }
+   }  
+  return isPalindromeR;
+}
+  
+bool isPalindrome(int argc, char* argv[], bool caseSensitive, bool spaceIgnore)
+{
   
   
   return bool;
 }
 
-string preprocessString(string nameExecutable)
+
+
+
+string toLower(int argc, char* argv[])
 {
   string returnString;
   char lowerConvert;
   int i = 0;
   
-  while (nameExecutable[i])
-  {
-    lowerConvert=nameExecutable[i];
+  for (int i = 0; i < argc; ++i) {
+    lowerConvert=argv[i];
     putchar (tolower(lowerConvert));
-    i++;
+    returnString = lowerConvert;
   }
   
   
   return returnString;
 }
 
+string removePunctuation(int argc, char* argv[])
+{
+  string returnString;
+  
+  
+  
+  return returnString;
+}
