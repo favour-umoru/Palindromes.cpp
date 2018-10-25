@@ -11,7 +11,9 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
   // Declarations
-  string Executable = argv[0];
+  string Executable;
+  // string that has the executable file name.
+  string ExecuteName = argv[0];
   
   // Set both to false as a default
   bool caseSensitive = false;
@@ -28,15 +30,16 @@ int main(int argc, char* argv[]) {
   // Call the first function to display in case no input strings were found at the command line.
   if(argc == 1)
   {
-    printUsageInfo(Executable);
+    printUsageInfo(ExecuteName);
     return 0;
   }
   
   // Call the function to determine if it is a palindrome for each string in the function.
   // Function loops through, but first check if there is a flag
   for(int i = 0; i < argc; i++){
-    Executable =  argv[1];
-    
+    // All the strings after the executable program
+    Executable =  argv[i];
+ 
     // Assign the flags to strings so they can be compared to the first string in the character
     //After Executable has been assigned to the first string in the array, 
     // check to see if the only input is a flag case, if so then exit the program
@@ -44,7 +47,7 @@ int main(int argc, char* argv[]) {
                     || argv[1] == "-Sc" || argv[1] == "-Cs || argv[1] == "-cS" || argv[1] == "-sC"
                     || argv[1] == "-cs" || argv[1] == "-sc")
     {
-      printUsageInfo(argv[0]);
+      printUsageInfo(ExecuteName);
       cout << "-c: turn on case sensitivity" << endl;
       cout << "-s: turn off ignoring spaces" << endl;
       return 0;
@@ -56,21 +59,22 @@ int main(int argc, char* argv[]) {
       // If the case sensitive flag is called
       if(Executable == "-c" || Executable == "-C")
       {
-        
+        bool caseSensitive = True;
       }
       // If the Space sensitive flag is called
       else if(Executable == "-s" || Executable == "-S")
       {
-        
+        bool removeSpaces = True;
       }
       // I both space and Punctuation should be taken into account
       else if(Executable == "-Cs" || Executable == "-Sc"|| argv[1] == "-cs" || argv[1] == "-sc")
       {
-        
+        bool caseSensitive = True;
+        bool removeSpaces = True;
       }
-    }
       
-    
+    }
+ 
   }
   return 0;
 }
